@@ -356,6 +356,29 @@ definition {
 				key_fieldFieldLabel = "${fieldFieldLabel}",
 				locator1 = "DDMEditStructure#FORM_FIELD_CONTAINER");
 
+		}
+	}
+	
+	macro assertFieldRepeated {
+		AssertElementPresent(
+			key_fieldReference = "${fieldReference}",
+			key_index = "${index}",
+			locator1 = "WCEditWebContent#REPEATED_FIELD_BY_INDEX");
+	}
+
+	macro assertFieldRepeatedNotPresent {
+		AssertElementNotPresent(
+			key_fieldReference = "${fieldReference}",
+			key_index = "${index}",
+			locator1 = "WCEditWebContent#REPEATED_FIELD_BY_INDEX");
+	}
+
+	macro deleteField {
+		AssertClick.assertPartialTextClickAt(
+			key_fieldFieldLabel = "${fieldFieldLabel}",
+			locator1 = "DDMEditStructure#FORM_FIELD_CONTAINER",
+			value1 = "${fieldFieldLabel}");
+
 			Click(
 				key_text = "${fieldFieldLabel}",
 				locator1 = "Icon#ANY_VERTICAL_ELLIPSIS");
