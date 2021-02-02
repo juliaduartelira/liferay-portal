@@ -373,11 +373,11 @@ definition {
 			locator1 = "WCEditWebContent#REPEATED_FIELD_BY_INDEX");
 	}
 
-	macro deleteField {
-		AssertClick.assertPartialTextClickAt(
-			key_fieldFieldLabel = "${fieldFieldLabel}",
-			locator1 = "DDMEditStructure#FORM_FIELD_CONTAINER",
-			value1 = "${fieldFieldLabel}");
+	macro delete {
+		if (isSet(fieldFieldLabel)) {
+			Click(
+				key_fieldFieldLabel = "${fieldFieldLabel}",
+				locator1 = "DDMEditStructure#FORM_FIELD_CONTAINER");
 
 			Click(
 				key_text = "${fieldFieldLabel}",
