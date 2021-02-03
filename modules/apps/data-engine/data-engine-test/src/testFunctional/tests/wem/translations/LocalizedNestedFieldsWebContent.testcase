@@ -111,7 +111,7 @@ definition {
 	@priority = "5"
 	test TranslateWebContentToNLanguages {
 		property portal.acceptance = "false";
-		
+
 		WebContentNavigator.openWebContentAdmin(siteURLKey = "test-site-name");
 
 		NavItem.gotoStructures();
@@ -166,19 +166,19 @@ definition {
 		LexiconEntry.gotoAdd();
 
 		MenuItem.click(menuItem = "My Structure Name 1");
-		
+
 		CKEditor.addContentInWebContent(
 			content = "Hello",
 			fieldLabel = "Text");
 
 		WebContent.addWithStructureCP(webContentTitle = "WC Title");
-			
+
 		PortletEntry.changeLocale(locale = "pt-BR");
 
 		CKEditor.addContentInWebContent(
 			content = "Olá",
 			fieldLabel = "Text");
-			
+
 		WebContent.addWithStructureCP(webContentTitle = "WC Título");
 
 		PortletEntry.changeLocale(locale = "es-ES");
@@ -194,8 +194,8 @@ definition {
 		WebContentNavigator.gotoEditCP(webContentTitle = "WC Title");
 
 		CKEditor.assertContentIframe(
-            fieldLabel = "Text",
-            content = "Hello");
+			content = "Hello",
+			fieldLabel = "Text");
 
 		AssertTextEquals(
 			locator1 = "TextInput#TITLE",
@@ -204,8 +204,8 @@ definition {
 		PortletEntry.changeLocale(locale = "pt-BR");
 
 		CKEditor.assertContentIframe(
-            fieldLabel = "Texto",
-            content = "Olá");
+			content = "Olá",
+			fieldLabel = "Texto");
 
 		AssertTextEquals(
 			locator1 = "TextInput#TITLE",
@@ -214,8 +214,8 @@ definition {
 		PortletEntry.changeLocale(locale = "es-ES");
 
 		CKEditor.assertContentIframe(
-            fieldLabel = "Texto",
-            content = "Hola");
+			content = "Hola",
+			fieldLabel = "Texto");
 
 		AssertTextEquals(
 			locator1 = "TextInput#TITLE",
