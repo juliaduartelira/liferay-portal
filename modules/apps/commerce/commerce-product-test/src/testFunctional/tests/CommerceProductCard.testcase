@@ -155,15 +155,14 @@ definition {
 		CommerceAccelerators.initializeNewSiteViaAccelerator(siteName = "Minium");
 
 		Navigator.openWithAppendToBaseURL(urlAppend = "web/minium");
-		
-        Click(
+
+		Click(
 			key_productName = "U-Joint",
 			locator1 = "CommerceAccelerators#PRODUCT_CARD_NAME");
 
 		AssertTextEquals.assertPartialText(
-					locator1 = "CommerceAccelerators#PRODUCT_DETAILS_LIST_PRICE",
-					value1 = "24.00");
-
+			locator1 = "CommerceAccelerators#PRODUCT_DETAILS_LIST_PRICE",
+			value1 = "24.00");
 	}
 
 	@description = "COMMERCE-5865. As a buyer, I want to view the product price range"
